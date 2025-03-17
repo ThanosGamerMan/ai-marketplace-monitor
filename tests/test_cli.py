@@ -247,7 +247,7 @@ proxy_password = 'fadfadf'
         (base_marketplace_cfg + "\na=1\n" + base_item_cfg + base_user_cfg, False),
         (base_marketplace_cfg + base_item_cfg + "\na=1\n" + base_user_cfg, False),
         (base_marketplace_cfg + base_item_cfg + base_user_cfg + "\na=1\n", False),
-        (base_marketplace_cfg + base_item_cfg + base_user_cfg + monitor_cfg, False),
+        (base_marketplace_cfg + base_item_cfg + base_user_cfg + monitor_cfg, True),
         (base_marketplace_cfg + base_item_cfg + base_user_cfg + licensed_monitor_cfg, True),
     ],
 )
