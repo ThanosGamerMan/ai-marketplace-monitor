@@ -327,16 +327,7 @@ class MarketplaceMonitor:
                             or marketplace_config.max_search_interval
                             or 60 * 60,
                             search_interval,
-                        )
-                        if self.logger:
-                            self.logger.info(
-<<<<<<< HEAD
-                                f"""{hilight("[Schedule]", "info")} Scheduling   {item_config.name} every {humanize.naturaldelta(search_interval)} {'' if search_interval == max_search_interval else f'to {humanize.naturaldelta(max_search_interval)}'}"""
-=======
-                                f"""{hilight("[Schedule]", "info")} I will now find you a deal-on {item_config.name} every {humanize.naturaldelta(search_interval)} {'' if search_interval == max_search_interval else f'to {humanize.naturaldelta(max_search_interval)}'}"""
->>>>>>> 4e2311c32a83934fc5833ffb06bdd72d630f4357
-                            )
-                        scheduled = schedule.every(search_interval).to(max_search_interval).seconds
+
                     if scheduled is None:
                         raise ValueError(
                             f"Cannot determine a schedule for {item_config.name} from configuration file."
