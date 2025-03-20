@@ -330,7 +330,11 @@ class MarketplaceMonitor:
                         )
                         if self.logger:
                             self.logger.info(
-                                f"""{hilight("[Schedule]", "info")} Scheduling to search for the amazing item which is {item_config.name} every {humanize.naturaldelta(search_interval)} {'' if search_interval == max_search_interval else f'to {humanize.naturaldelta(max_search_interval)}'}"""
+<<<<<<< HEAD
+                                f"""{hilight("[Schedule]", "info")} Scheduling to search for {item_config.name} every {humanize.naturaldelta(search_interval)} {'' if search_interval == max_search_interval else f'to {humanize.naturaldelta(max_search_interval)}'}"""
+=======
+                                f"""{hilight("[Schedule]", "info")} I will now find you a deal-on {item_config.name} every {humanize.naturaldelta(search_interval)} {'' if search_interval == max_search_interval else f'to {humanize.naturaldelta(max_search_interval)}'}"""
+>>>>>>> 4e2311c32a83934fc5833ffb06bdd72d630f4357
                             )
                         scheduled = schedule.every(search_interval).to(max_search_interval).seconds
                     if scheduled is None:
@@ -457,7 +461,7 @@ class MarketplaceMonitor:
                     # to reduce the frequency of this message.
                     if self.logger:
                         self.logger.info(
-                            f"""{hilight("[Schedule]", "info")} Next job to search {hilight(str(next(iter(next_job.tags))))} scheduled to run in {humanize.naturaldelta(idle_seconds)} at {next_job.next_run.strftime("%Y-%m-%d %H:%M:%S")}"""
+                            f"""{hilight("[Schedule]", "info")} Next job to search {hilight(str(next(iter(next_job.tags))))} will be scheduled to run in {humanize.naturaldelta(idle_seconds)} at {next_job.next_run.strftime("%Y-%m-%d %H:%M:%S")}"""
                         )
 
                 # sleep at most 1 hr, and print updated "next job" message
