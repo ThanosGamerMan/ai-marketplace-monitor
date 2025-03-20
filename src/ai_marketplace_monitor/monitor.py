@@ -312,7 +312,7 @@ class MarketplaceMonitor:
                                 # '12:12:12' or '12:12'
                                 if self.logger:
                                     self.logger.info(
-                                        f"""{hilight("[Schedule]", "ss")} Scheduling to search for {item_config.name} every day at {start_at}"""
+                                        f"""{hilight("[Schedule]", "ss")} THIS IS WORKING {item_config.name} every day at {start_at}"""
                                     )
                                 scheduled = schedule.every().day.at(start_at)
                     else:
