@@ -326,25 +326,7 @@ class MarketplaceMonitor:
                             item_config.max_search_interval
                             or marketplace_config.max_search_interval
                             or 60 * 60,
-                            search_interval,
-                        )
-                        if self.logger:
-                            self.logger.info(
-                                f"""{hilight("[Schedule]", "info")} I will now find you a deal on {item_config.name} every {humanize.naturaldelta(search_interval)} {'' if search_interval == max_search_interval else f'to {humanize.naturaldelta(max_search_interval)}'}"""
-                            )
-                        scheduled = schedule.every(search_interval).to(max_search_interval).seconds
-                    if scheduled is None:
-                        raise ValueError(
-                            f"Cannot determine a schedule for {item_config.name} from configuration file."
-                        )
-                    scheduled.do(
-                        self.search_item,
-                        marketplace_config,
-                        marketplace,
-                        item_config,
-                    ).tag(item_config.name)
-
-    def handle_pause(self: "MarketplaceMonitor") -> None:
+                            searc
         """Handle interruption signal."""
         if self.keyboard_monitor is None or not self.keyboard_monitor.is_paused():
             return
